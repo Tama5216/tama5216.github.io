@@ -1,110 +1,128 @@
 <head>
+	<title> Tama's website </title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap" rel="stylesheet">
 	  <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Quicksand&display=swap" rel="stylesheet"> 
-	<title> Blog </title>
-	<style>
-		.button{
-			border-style : none;
-			transition: 0.5s;
-			opacity: 0.6;
-			background-color: #08ff94;
-			text-decoration: none;
-			height: 100%;
-			padding : 50px;
-			color : black;
-			font-family: "Nanum Gothic";
-			font-size : 36;
-			width: 100px
-		}
-		.button:hover{
-			opacity: 50;
-		}
-		body{
-			background-color : #2a302d;
-			font-family: "Nanum Gothic";
-			color : white;
-		}
-		.title{
-			font-size : 35;
-		}
-		.links{
-			text-decoration: none;
-			color : white;
-			transition: 0.5s;
-			color : #08ff94;
-		}
-		.links:hover{
-			color : cyan;
-		}
-		.img{
-			width : 200;
-			height : auto;
-		}
-		.line{
-			background-color: white;
-			border-style: solid;
-			border-color: white;
-			border-width: .5;
-		}
-	</style>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
+
+<style>
+	body{
+		font-family: "Nanum Gothic";
+		background-color: #393c45;
+	}
+	.main{
+		border-style: solid;
+		position: absolute;
+		left : 15%;
+		width: 70%;
+		border-color: #928d99;
+		border-width: 1px;
+		height : auto;
+		padding : 10px;
+		background-color: white;
+	}
+
+	.button{
+		font-family: : "Nanum Gothic";
+		border-style: solid;
+		cursor : pointer;
+		color : white;
+		background-color: #496ae3;
+		padding : 5px;
+		border-color: #496ae3;
+		border-width: 1px;
+	}
+	.button:hover{
+		color : #625c6b;
+	}
+	#introduction{
+		display: block;
+	}
+	.links{
+		color : blue;
+		text-decoration: none;
+	}
+	.links:hover{
+		color : purple;
+	}
+	#picts{
+		display: block;
+	}
+	#projects{
+		display: block;
+	}
+</style>
+
+<script>
+	function show(id , buttonid){
+		var x = document.getElementById(id);
+		if (x.style.display == "none"){
+			x.style.display = "block";
+			document.getElementById(buttonid).innerHTML = "Show less";
+		}
+		else{
+			x.style.display = "none";
+			document.getElementById(buttonid).innerHTML = "Show more";
+		}
+	}
+
+	function jump(){
+		var x = document.getElementById("lists");
+		location.href = "index.html#" + x.value;
+	}
+</script>
 </head>
 
 <body>
-	<a href="index.html#introduction" class='button'> Introduction </a>
-	<a href="index.html#projects" class='button'> Projects </a>
-	<a href="galery.html" class='button'> Galery </a>
-	<br></br>
-	<br></br>
-	<div id="introduction">
-		<h1 class='title'> Introduction </h1>
-		
-		<p> Hi everyone I am Tama my age is 16 years old.I am a highschooler
-			I live in Jogja , Indonesia.<br></br>
-		I code this website by myself<br></br>
-		Nice to meet you!</p>
-		<h2> Interests </h2>
-		<p> I am interested in Coding and History especially in Indonesian independence war and WW2.<br></br>
-			I learn how to code when i was 13. I learn programming because of some programming articles that i found on the internet <br></br>
-			Sometimes i watch anime and play some video games when i have a free time.
-		</p>
-<h2> Social media </h2>
-<li> Instagram : goodcakeee_321</li>
-<li> Discord : Tama#5938</li>
 
-	</div>
-	
-	<br>
-	<br>
-	<hr class='line'>
-	<br>
-	<br>
-	<div id="projects">
-		<h1 class="title">Projects </h1>
-		<br></br>
-		<h2> Music player </h2>
-		I made this program with python. <br></br>
-		<a href="https://github.com/tamaa01/musicplayer" class='links'>Click here to view the project</a><br></br>
-		<h2> Rainy discord bot </h2>
-		I made this discord bot by myself<br></br>
-		You can invite my bot into your server <br></br>
+	<div class='main'>
+		Jump to : <select name="lists" id="lists">
+			<option value="introduction">Introduction</option>
+			<option value="projects">Projects</option>
+			<option value="picts">My pictures</option>
+			<option value="socialmedia">Social media</option>
+		</select>
+		<button type="button" class="button" onclick="jump()">Submit</button>
+		<h2> Introduction </h2> <button type="button" onclick="show('introduction' , 'button1')" class='button' id="button1">Show less</button>
+		<p id='introduction'> Hi everyone I am Tama my age is 16 years old.I am a highschooler
+			I live in Jogja , Indonesia.
+		I made this website by myself . I am interested in Coding and History especially in Indonesian independence war and WW2.
+I learned how to do programming when I was 13 years old. I learned programming because of some programming articles i found on the internet
+Sometimes i watch anime and play video games when i have a free time. </p>
 
-		<a href="https://rainybot.github.io" class='links'>https://rainybot.github.io</a>
-<br></br>
-<h2> Simple calculator</h2>
-<a href="https://github.com/tamaa01/Simple-calculator" class="links">Click here to view the project</a>
-<br></br>
-<h2> Musicplayer with PyQt5 </h2>
-<a href="https://github.com/tamaa01/musicplayer-pyqt5" class="links">Click here to view the project</a>
-	</div>
+<h2> Projects </h2>
+<button type="button" onclick="show('projects' , 'button2')" class="button" , id="button2">Show less</button>
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<h1> Thanks for visiting this website! </h1>
+<div id="projects">
+	<h3> Music Player </h3>
+	<a href="https://github.com/tamaa01/musicplayer" class='links'>View project</a>
+	<h3> Simple calculator</h3>
+	<a href="https://github.com/tamaa01/Simple-calculator" class='links'>View project</a>
+	<h3> Musicplayer with PyQt5 </h3>
+	<a href="https://github.com/tamaa01/musicplayer-pyqt5" class='links'>View project</a>
+</div>
 
-</body>
+ <h2> My Pictures </h2>
+
+ <button type="button" onclick="show('picts' , 'button3')" id="button3" class="button">Show less</button>
+
+ <div id="picts">
+ 	<h3> My keyboard </h3> <br />
+ 	<img src="images/image1.jpeg" style="width:500px;height:auto">
+ 	<h3> My rooftop </h3>
+ 	<img src="imagee.jpeg" style="width:500px;height:auto">
+ </div>
+ <h2> Social media </h2>
+ <button type="button" onclick="show('socialmedia' , 'button4')" id="button4" class="button">Show less</button>
+ <div id="socialmedia">
+ 	<br />
+ <li> Discord : Tama#5938 </li>
+ <li> Instagram : goodcakeee_321</li>
+</div>
+</div>
